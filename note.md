@@ -18,3 +18,9 @@ $curl http://echo.default
 #同一Namespace
 $curl http://echo
 ```
+
+コンテキストの切り替え
+```
+$kubectl config get-contexts
+$kubectl cofnig use-context <CONTEXT_NAME>
+```
