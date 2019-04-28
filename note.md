@@ -24,3 +24,14 @@ $curl http://echo
 $kubectl config get-contexts
 $kubectl cofnig use-context <CONTEXT_NAME>
 ```
+
+```
+#ServiceAccountの作成
+$kubectl create sa <USERNAME>
+#secretの確認(secrets)
+$kubectl get sa <USERNAME> -o yaml
+#トークンの取り出し(data.token)
+$kubectl get secret <USERNAME> -o yaml
+#認証情報の設定
+$kubectl config set-credentials <USERNAME> --token=XXX
+```
