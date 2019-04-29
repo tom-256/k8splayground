@@ -54,3 +54,11 @@ $kubectl config set-credentials <USERNAME> --token=XXX
 - max-concurrent-downloads/max-concurrent-uploads
 - registory-mirror
 Docker Hubのレイテンシに影響されにくくする
+
+## k8sのNode障害対策
+- Nodeダウン＝サービスダウンとならないように、複数Node構成＋複数NodeにまたがったPod配置をおこなう
+- Pod AntiAffinity
+Podの配置ルールをDeploymentに定義する  
+replicasの数よりもルールのほうが優先される  
+nodeに配置されないpodはpending状態になる  
+このルールを適用する前に単一障害点を作らないような工夫をおこなう  
