@@ -62,3 +62,16 @@ Podの配置ルールをDeploymentに定義する
 replicasの数よりもルールのほうが優先される  
 nodeに配置されないpodはpending状態になる  
 このルールを適用する前に単一障害点を作らないような工夫をおこなう  
+- Node Affinity
+バッチジョブのような一時的にCPUリソースを多く消費するようなPodは、専用のNodeに隔離することで他のPodのパフォーマンスに影響を与えないようにする  
+- Horizontal Pod Autoscaler(HPA)
+Podのオートスケール  
+- Cluster Autoscaler
+Nodeのオートスケール  
+- helmのリリース管理
+--hitory-maxオプションをつけてConfigMapが溜まるのを防ぐ  
+1~2週間程度  
+```
+$helm init --history-max 20
+```
+
