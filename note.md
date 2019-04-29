@@ -41,3 +41,10 @@ $kubectl config set-credentials <USERNAME> --token=XXX
 終了処理に時間のかかるアプリケーションは長めに取っておく
 - lifecycle.preStop
 シャットダウンコマンドがあるものは前処理で実行する
+
+## コンテナシステムのロギングの王道
+- アプリケーションのロギングはファイルシステムでなくすべて標準出力
+- nginxなどのミドルウェアのログもすべて標準出力できるようにDockerイメージを構築
+- 標準出力するログはすべてJSON形式で出力し、それぞれの属性で検索や集計をしやすくする
+- k8sにおいてはfluet/fluentd-kubernetes-daemonsetで構成されるPodをDamonSetで各ホストに配置
+- k8sのリソースはラベルを適切に設定することでログの検索性を確保する
