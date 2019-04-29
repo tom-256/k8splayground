@@ -48,3 +48,9 @@ $kubectl config set-credentials <USERNAME> --token=XXX
 - 標準出力するログはすべてJSON形式で出力し、それぞれの属性で検索や集計をしやすくする
 - k8sにおいてはfluet/fluentd-kubernetes-daemonsetで構成されるPodをDamonSetで各ホストに配置
 - k8sのリソースはラベルを適切に設定することでログの検索性を確保する
+
+
+## dockerのチューニング
+- max-concurrent-downloads/max-concurrent-uploads
+- registory-mirror
+Docker Hubのレイテンシに影響されにくくする
