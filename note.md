@@ -35,3 +35,9 @@ $kubectl get secret <USERNAME> -o yaml
 #認証情報の設定
 $kubectl config set-credentials <USERNAME> --token=XXX
 ```
+
+
+- terminationGracePeriodSeconds
+終了処理に時間のかかるアプリケーションは長めに取っておく
+- lifecycle.preStop
+シャットダウンコマンドがあるものは前処理で実行する
